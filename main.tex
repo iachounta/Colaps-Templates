@@ -1,7 +1,10 @@
-\documentclass[12pt, a4paper, oneside]{book}
+\documentclass[11pt, a4paper, oneside]{book}
+\usepackage[backend=biber, style=ieee]{biblatex}
+
+\addbibresource{references.bib} %Imports bibliography file
+
 \usepackage[utf8]{inputenc}
 
-%\usepackage[backend=biber,style=alphabetic,sorting=ynt]{biblatex}
 \usepackage{microtype}
 
 \usepackage[english]{babel}
@@ -44,42 +47,28 @@
 
 \def\betreuer{Prof. Dr. Irene-Angelica Chounta}
 \def\ersterGutachter{Prof. Dr. Name}
-%\def\zweiterGutachter{Prof. Dr. Ucker}
 \def\fach{Faculty of Engineering}
 \def\dept{Department of Computer Science and Applied Cognitive Science} 
 \def\researchgroup{Computational Methods in Modeling and Analysis of Learning Processes} 
-\def\semester{Wintersemester 2020/2021}
+\def\semester{Insert Semester and Academic Year}
 
 
 \begin{document}
+
+    % This is an example of the thesis outline. Please adapt this template to fit your needs.
 	\include{title}
 	
-    % Erklärung
+
     \cleardoublepage
     \pagestyle{empty}
     \include{erklaerung}
     \pagestyle{empty}
 
-    % Abstract
-    %\setcounter{page}{2}
-    %\begin{abstract}
     \thispagestyle{plain}
     \input{abstract}
-    %\end{abstract}
-    
-    % Table of Contents
-    %\pagestyle{scrheadings}
-    %\setcounter{tocdepth}{2}
+
     \tableofcontents
 
-    % Text
-    %\cleardoublepage
-    %\pagenumbering{arabic}
-    %\pagestyle{scrheadings}
-    %\sloppy
-    
-    % CAREFUL: This is just an example what the outline of your thesis might look like. Your topic might require a different approach:
-    % e.g. you might not have a Results or an Evaluation chapter. Adapt this template according to your specific needs.
     
     \mainmatter
 	\lhead{}
@@ -92,30 +81,19 @@
     \include{Results}
     \include{Conclusion}
     
-    % Verzeichnisse
+%Figures, tables and references
     \cleardoublepage
     \listoffigures
     \listoftables
 
-    \bibliographystyle{acm}
-    \bibliography{references.bib}
-        
-    
-    % Anhang
+%\bibliographystyle{acm}
+ %   \bibliography{references}
+  \printbibliography      
+%appendices    
+
     \cleardoublepage
     \pagenumbering{roman}
-    %\part*{Appendix}
-    %\begin{appendix}
     \appendix
     \include{appendix}
-    %\end{appendix}
-    
-
-    
-   % \printbibliography[heading=bibintoc]
-    
-    
-
-	
 
 \end{document}
